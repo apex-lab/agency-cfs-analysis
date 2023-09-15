@@ -82,7 +82,7 @@ def calc_overest_means(df):
     means : dict
         A dictionary containing Huber means for each condition.
     '''
-    df = df[(~df.aware) | (~df.masked)]
+    df = df[(df.aware != True) | (~df.masked)]
     get_means = lambda df: huber_mean(df.overest_t)
     means = _calc_per_condition(df, get_means)
     return means
