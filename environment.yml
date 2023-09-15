@@ -1,0 +1,24 @@
+name: agency-cfs
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pymc
+  - arviz
+  - bambi
+  - pandas
+  - numpy
+  - scipy
+  - ipython
+  - jupyter=1.0
+  - matplotlib
+  - seaborn
+  - numba
+  - statsmodels
+  - joblib
+  - pip
+  - pip:
+    - tfHuber
+    - pybids
+    - osfclient
+    - dabest
