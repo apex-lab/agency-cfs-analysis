@@ -60,6 +60,7 @@ def calc_detection_counts(df, catch = False):
         return (df.aware.sum(), (~df.aware).sum())
     df = df[df.masked]
     counts =  _calc_per_condition(df, get_counts, catch)
+    counts = (counts['masked baseline'], counts['masked operant'])
     counts = np.array(counts)
     return counts.astype(int)
 
