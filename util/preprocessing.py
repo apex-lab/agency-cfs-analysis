@@ -55,9 +55,8 @@ def calc_detection_counts(df, catch = False):
         reported circles seen in each condition, and
         counts[;, 1] is n_trials - counts[:, 0].
     '''
-    get_counts = lambda df: df.aware.mean()
     def get_counts(df):
-        return (df.aware.sum(), (~df.aware).sum())
+        return (df.aware.sum(), np.logical_not(df.aware).sum())
     df = df[df.masked]
     counts =  _calc_per_condition(df, get_counts, catch)
     counts = (counts['masked baseline'], counts['masked operant'])
